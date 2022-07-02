@@ -13,3 +13,28 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Terraform files
+.terraform
+terraform.tfstate
+terraform.tfvars
+terraform.tfvars.json
+*.tfstate*
+.terragrunt
+.terragrunt-cache
+.terraform.lock.hcl
+
+# IDE files
+.idea
+.vscode
+*.iml
+vendor
+
+# Folder used to store temporary test data by Terratest
+.test-data
+
+# rbenv
+.ruby-version
+
+# OS X
+.DS_Store
