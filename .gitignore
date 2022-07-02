@@ -38,3 +38,6 @@ vendor
 
 # OS X
 .DS_Store
+
+example.txt
+example2.txt
