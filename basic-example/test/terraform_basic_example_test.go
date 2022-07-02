@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// An example of how to test the simple Terraform module in examples/terraform-basic-example using Terratest.
+// An example of how to test the simple Terraform module in infra using Terratest.
 func TestTerraformBasicExample(t *testing.T) {
 	t.Parallel()
 
@@ -18,7 +18,7 @@ func TestTerraformBasicExample(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// website::tag::1::Set the path to the Terraform code that will be tested.
 		// The path to where our Terraform code is located
-		TerraformDir: "../examples/terraform-basic-example",
+		TerraformDir: "../infra",
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
