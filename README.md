@@ -28,6 +28,7 @@ docker run --name hashicorp-learn --detach --publish 8080:80 nginx:latest
 docker ps --filter="name=hashicorp-learn"
 
 terraform import docker_container.web $(docker inspect --format="{{.ID}}" hashicorp-learn)
+terraform plan
 terraform show
 terraform show -no-color >> docker.tf
 terraform apply -auto-approve
