@@ -17,3 +17,7 @@ output "example_map" {
 output "example_any" {
   value = var.example_any
 }
+
+output "service_name" {
+  value = local.service_name
+}

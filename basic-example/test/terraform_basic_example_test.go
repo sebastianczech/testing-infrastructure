@@ -16,6 +16,7 @@ func TestTerraformBasicExample(t *testing.T) {
 	expectedText := "test"
 	expectedList := []string{expectedText}
 	expectedMap := map[string]string{"expected": expectedText}
+	expectedVariableWithValueFromLocals := "forum"
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// Set the path to the Terraform code that will be tested.
@@ -53,6 +54,7 @@ func TestTerraformBasicExample(t *testing.T) {
 	actualTextExample2 := terraform.Output(t, terraformOptions, "example2")
 	actualExampleList := terraform.OutputList(t, terraformOptions, "example_list")
 	actualExampleMap := terraform.OutputMap(t, terraformOptions, "example_map")
+	actualVariableWithValueFromLocals := terraform.Output(t, terraformOptions, "service_name")
 
 	// -------------------------- THEN --------------------------
 
@@ -62,4 +64,5 @@ func TestTerraformBasicExample(t *testing.T) {
 	assert.Equal(t, expectedText, actualTextExample2)
 	assert.Equal(t, expectedList, actualExampleList)
 	assert.Equal(t, expectedMap, actualExampleMap)
+	assert.Equal(t, expectedVariableWithValueFromLocals, actualVariableWithValueFromLocals)
 }
