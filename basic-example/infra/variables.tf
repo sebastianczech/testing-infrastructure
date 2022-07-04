@@ -45,3 +45,13 @@ variable "example_any" {
   type        = any
   default     = null
 }
+
+variable "listener_rule_priority" {
+  type        = number
+  default     = 1
+  description = "Priority of listener rule between 1 to 50000"
+  validation {
+    condition     = var.listener_rule_priority > 0 && var.listener_rule_priority < 50000
+    error_message = "The priority of listener_rule must be between 1 to 50000."
+  }
+}

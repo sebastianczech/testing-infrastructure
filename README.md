@@ -10,8 +10,10 @@ Repository created while learning how to test infrastructure
 ## Basic example - how to run tests
 
 ```bash
-cd basic-example/test
+cd basic-example/infra
+terraform apply -var-file varfile.tfvars
 
+cd basic-example/test
 go mod init github.com/sebastianczech/testing-infrastructure/tree/main/basic-example
 go mod tidy
 go test -v -timeout 30m
